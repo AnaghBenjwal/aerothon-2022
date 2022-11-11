@@ -83,14 +83,14 @@ def navigate_to_relative_waypoint(dnorth, deast, dalt):
     print('next waypoint: ', relative_waypoint)
      # relative_waypoint = LocationGlobalRelative(relative_waypoint.lat, relative_waypoint.lon, dalt)
 
-    vehicle.simple_goto(relative_waypoint, groundspeed=5)
+    vehicle.simple_goto(relative_waypoint, groundspeed=2)
 
     distance_from_waypoint = get_distance_metres(
            relative_waypoint, vehicle.location.global_frame)
     while (distance_from_waypoint >= 1):
         distance_from_waypoint = get_distance_metres(
             relative_waypoint, vehicle.location.global_frame)
-        vehicle.simple_goto(relative_waypoint, groundspeed=5)
+        vehicle.simple_goto(relative_waypoint, groundspeed=2)
         time.sleep(5)
         print('distance from waypoint: ', distance_from_waypoint)
     print('reached waypoint')

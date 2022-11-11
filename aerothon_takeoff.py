@@ -18,7 +18,8 @@ def arm_and_takeoff(aTargetAltitude):
     print("Arming motors")
     # Copter should arm in GUIDED mode
     vehicle.mode = VehicleMode("GUIDED")
-    vehicle.armed = True    
+    vehicle.armed = True   
+    print('VEHICLE MODE: ', vehicle.mode) 
 
     while not vehicle.armed:      
         print(" Waiting for arming...")
@@ -39,7 +40,10 @@ def arm_and_takeoff(aTargetAltitude):
 
 
 arm_and_takeoff(10)
+vehicle.mode = VehicleMode("LAND")
+print('VEHICLE MODE: ', vehicle.mode) 
 
 print("Returning to Launch")
-while True :
-	vehicle.mode = VehicleMode("RTL")
+while vehicle.armed :
+	vehicle.mode = VehicleMode("LAND")
+print('VEHICLE DISARMED') 
