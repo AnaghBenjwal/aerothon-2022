@@ -36,10 +36,10 @@ global k
 global v
 
 # FOR MIT GROUND
-listofwaypoints = ([13.344069, 74.793536], [13.343796, 74.793661], [13.343928, 74.793960], [13.344228, 74.793785])
+#listofwaypoints = ([13.344069, 74.793536], [13.343796, 74.793661], [13.343928, 74.793960], [13.344228, 74.793785])
 
 # FOR  MIT FOOTBALL GROUND
-#listofwaypoints = ([13.342471, 74.792426], [13.342142, 74.792377], [13.342194, 74.792715], [13.342541, 74.792707])
+listofwaypoints = ([13.342471, 74.792426], [13.342142, 74.792377], [13.342194, 74.792715], [13.342541, 74.792707])
 
 # FOR SIMULATION
 #listofwaypoints = ([-35.36316, 149.16523], [-35.363244, 149.16527], [-35.361354, 149.165218], [-35.363244, 149.168801])
@@ -235,7 +235,7 @@ def target_detection(frame) :
         detection_result = detector.detect(input_tensor)
 
         image = utils.visualize(image, detection_result)
-        cv2.imwrite('~/examples/lite/examples/object_detection/raspberry-pi/ft3/Frames' + str(v) + '.jpg')
+        cv2.imwrite('/home/aerothon/examples/lite/examples/object_detection/raspberry-pi/ft3/Frames' + str(v) + '.jpg')
 
         if len(detection_result.detections) > 0 :
             hastargetbeendetected = True
